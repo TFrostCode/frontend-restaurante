@@ -8,7 +8,7 @@ const AppRouter = () => {
     <>
       {/* <Navbar /> */}
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
       </Routes>
     </>
   );
