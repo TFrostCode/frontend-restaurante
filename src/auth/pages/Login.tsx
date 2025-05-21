@@ -1,69 +1,56 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const Login = () => {
   return (
-    <div className="container vh-100 d-flex align-items-center justify-content-center">
-      <div
-        className="row rounded-5 overflow-hidden shadow-lg w-100"
-        style={{ maxWidth: "1150px" }}
-      >
-        {/* Formulario */}
-        <div className="col-md-6 p-5 d-flex flex-column justify-content-center">
-          <div className="mb-4 d-flex align-items-center gap-1">
-            <img
-              src="/src/assets/img/logo.jpg"
-              alt="Logo del restaurante Chelita"
-              className="img-fluid rounded-circle"
-              style={{ width: "90px", height: "90px", objectFit: "cover" }}
-            />
-            <div>
-              <p className="mb-0 h3">RESTAURANTE CEVICHERIA</p>
-              <p className="fw-bold text-danger d-md h3">CHELITA</p>
-            </div>
-          </div>
-
-          <form>
-            <div className="mb-3">
-              <label htmlFor="username" className="form-label fw-semibold">
-                Nombre de usuario
-              </label>
-              <input
-                type="text"
-                className="form-control rounded-3"
-                id="username"
-                placeholder="chelita123"
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="password" className="form-label fw-semibold">
-                Contraseña
-              </label>
-              <input
-                type="password"
-                className="form-control rounded-3"
-                id="password"
-                placeholder="••••••••"
-              />
-            </div>
-            <button
-              type="submit"
-              className="btn btn-danger w-100 rounded-3 py-2 fw-semibold"
-            >
-              Ingresar
-            </button>
-          </form>
-        </div>
-
-        {/* Imagen lateral */}
-        <div className="col-md-6 d-none d-md-block p-0">
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-white shadow-xl rounded-xl max-w-5xl w-full m-8">
+        <div className="hidden md:block">
           <img
             src="/src/assets/img/Chelita.jpg"
             alt="Cevichería Chelita"
-            className="img-fluid h-100 w-100 p-3"
-            style={{ objectFit: "cover" }}
+            className="h-full w-full object-cover"
           />
         </div>
+
+        <Card className="m-3">
+          <CardHeader className="flex justify-center items-center gap-4">
+            <img
+              src="/src/assets/img/logo.jpg"
+              alt="Logo del restaurante Chelita"
+              className="w-25 h-25 rounded-full object-cover"
+            />
+            <div>
+              <CardTitle className="text-xl md:text-2xl">
+                RESTAURANTE CEVICHERÍA
+              </CardTitle>
+              <CardTitle className="text-red-500 text-xl">CHELITA</CardTitle>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="username">Nombre de usuario</Label>
+              <Input id="username" placeholder="chelita123" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="password">Contraseña</Label>
+              <Input id="password" type="password" placeholder="••••••••" />
+            </div>
+          </CardContent>
+          <CardFooter>
+            <Button className="w-full font-bold text-md" variant="destructive">
+              Ingresar
+            </Button>
+          </CardFooter>
+        </Card>
       </div>
     </div>
   );
