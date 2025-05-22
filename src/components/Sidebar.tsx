@@ -1,4 +1,7 @@
-
 export const Sidebar = () => {
-  return <div>Sidebar</div>;
+  return (
+    <>
+      <h1>ACA VA EL Sidebar</h1>
+    </>
+  );
 };
